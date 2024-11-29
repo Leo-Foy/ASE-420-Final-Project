@@ -1,0 +1,28 @@
+const dataModel = require('../models/dataModel');
+
+// Handle fetching all data
+exports.getAllData = (req, res) => {
+    dataModel.getAllData((err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+        } else {
+            res.status(200).json({ data: rows });
+        }
+    });
+};
+
+// Handle adding new data
+exports.addData = (req, res) => {
+    const newData = req.body;
+    if (!newData.name) {
+        return res.status(400).json({ error: 'Name is required' });
+    }
+
+    dataModel.addData(newData, (err, id) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+        } else {
+            res.status(201).json({ message: 'Data added', id });
+        }
+    });
+};
