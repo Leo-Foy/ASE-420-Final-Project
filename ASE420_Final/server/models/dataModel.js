@@ -7,7 +7,7 @@ const db = new sqlite3.Database('./database.db', (err) => {
 
 // Query to get all data
 exports.getAllData = (callback) => {
-    const query = 'SELECT * FROM your_table_name';
+    const query = 'SELECT * FROM users';
     db.all(query, [], (err, rows) => {
         callback(err, rows);
     });
@@ -15,8 +15,8 @@ exports.getAllData = (callback) => {
 
 // Query to add new data
 exports.addData = (data, callback) => {
-    const query = 'INSERT INTO your_table_name (name) VALUES (?)';
-    db.run(query, [data.name], function (err) {
+    const query = 'INSERT INTO users (email, password) VALUES (?, ?)';
+    db.run(query, [data.email, data.password], function (err) {
         callback(err, this.lastID);
     });
 };

@@ -7,8 +7,8 @@
         <nav class="navbar">
             <div class="logo">Brainbolt</div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Login</a></li>
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/login">Login</router-link></li>
             </ul>
         </nav>
     </div>

@@ -2,7 +2,7 @@
     <div>
         <h1>Data from SQLite</h1>
         <ul>
-            <li v-for="user in data" :key="user.id">{{ user.name }}</li>
+            <li v-for="user in data" :key="user.id">{{ user.email }}, {{ user.password }}</li>
         </ul>
     </div>
 </template>
