@@ -7,7 +7,7 @@
 
 <template>
   <Navbar />
-  <dataTest />
+  <!--<dataTest />-->
   <router-view></router-view>
 </template>
 

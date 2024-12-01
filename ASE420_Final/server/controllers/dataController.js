@@ -15,7 +15,7 @@ exports.getAllData = (req, res) => {
 exports.addData = (req, res) => {
     const newData = req.body;
     if (!newData.name) {
-        return res.status(400).json({ error: 'Name is required' });
+        return res.status(400).json({ error: 'error' });
     }
 
     dataModel.addData(newData, (err, id) => {
