@@ -45,9 +45,8 @@ app.post('/login', (req, res) => {
         
 });
 
-// Example API route
 app.get('/api/data', (req, res) => {
-    db.all('SELECT * FROM users', [], (err, rows) => {
+    db.all('SELECT * FROM QA_Set', [], (err, rows) => {
         if (err) {
             res.status(400).json({ error: err.message });
             return;
@@ -55,6 +54,7 @@ app.get('/api/data', (req, res) => {
         res.json({ data: rows });
     });
 });
+
 
 const PORT = 3000;
 app.listen(PORT, () => {

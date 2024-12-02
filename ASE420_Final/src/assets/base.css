@@ -94,15 +94,49 @@ body {
 .transparent-button {
   background-color: transparent;
   border: 2px solid white;
-  border-radius: 12px; /* Adjust for desired roundness */
+  border-radius: 8px; 
   color: yellow;
-  padding: 10px 20px; /* Adjust for desired button size */
+  padding: 10px 20px; 
+  width: 140px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 10px;
   
 }
 
 .transparent-button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Optional: Change on hover */
+  background-color: rgba(255, 255, 255, 0.1); 
 }
+
+.edit-button {
+  
+}
+
+.delete-button {
+
+}
+
+.set-card {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 12px; 
+  padding: 20px 20px;
+  list-style: none;
+  display: inline-block; 
+  width: 200px; 
+  height: 200px;
+  text-align: center;  
+  margin-left: 10px;
+}
+
+.set-card-content {
+  width: 100%; /* Ensure child elements respect the parent's width */
+}
+
+.set-card-content p {
+  margin: 0; /* Remove default margin from <p> */
+  text-align: center; /* Center-align text */
+  
+}
+
