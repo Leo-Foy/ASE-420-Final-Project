@@ -5,4 +5,5 @@ const API = axios.create({
 });
 
 export const fetchData = () => API.get('/data');
+export const fetchFlashcards = (setId) => API.get(`/flashcardData?setId=${setId}`);
 export const addData = (newData) => API.post('/data', newData);

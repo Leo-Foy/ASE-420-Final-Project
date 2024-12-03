@@ -5,7 +5,7 @@ const db = new sqlite3.Database('./database.db', (err) => {
     else console.log('Connected to SQLite database.');
 });
 
-// Query to get all data
+
 exports.getAllData = (callback) => {
     const query = 'SELECT * FROM users';
     db.all(query, [], (err, rows) => {
@@ -13,7 +13,6 @@ exports.getAllData = (callback) => {
     });
 };
 
-// Query to add new data
 exports.addData = (data, callback) => {
     const query = 'INSERT INTO users (email, password) VALUES (?, ?)';
     db.run(query, [data.email, data.password], function (err) {

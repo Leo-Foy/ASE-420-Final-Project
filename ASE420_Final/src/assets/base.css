@@ -140,3 +140,20 @@ body {
   
 }
 
+.flashcard-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.flashcard {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.controls button {
+  margin: 5px;
+}
+

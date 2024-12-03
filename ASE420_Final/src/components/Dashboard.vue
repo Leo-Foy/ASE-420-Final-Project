@@ -12,8 +12,8 @@
                 <div class="set-card-content">
                     <p>{{ set.Title }}</p>
                     <div class="button-container">
-                        <button @click="toFlashcard" class="transparent-button">Flashcards</button>
-                        <button @click="toQuiz" class="transparent-button">Quiz</button>
+                        <button @click="toFlashcard(set)" class="transparent-button">Flashcards</button>
+                        <button @click="toQuiz(set)" class="transparent-button">Quiz</button>
                     </div>
                 </div>
             </li>
@@ -41,12 +41,12 @@
         },
 
         methods: {
-            toFlashcard(){
-                this.$router.push({ name: 'Flashcards' });
+            toFlashcard(set){
+                this.$router.push({ name: 'Flashcards', params: { setId: set.id } });
             },
 
-            toQuiz() {
-                this.$router.push({ name: 'Quiz' });
+            toQuiz(set) {
+                this.$router.push({ name: 'Quiz', params: { setId } });
             },
         }
     }

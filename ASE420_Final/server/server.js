@@ -3,11 +3,9 @@ const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Connect to SQLite database
 const db = new sqlite3.Database('./database.db', (err) => {
     if (err) {
         console.error('Error opening database:', err.message);
@@ -24,7 +22,6 @@ app.post('/login', (req, res) => {
         return res.status(400).json({ success: false, message: 'Missing email or password' });
     }
 
-    // Query the database for the user
     const query = 'SELECT * FROM users WHERE email = ?';
     db.get(query, [email], (err, user) => {
         if (err) {
@@ -38,7 +35,7 @@ app.post('/login', (req, res) => {
             return res.status(401).json({ success: false, message: 'Invalid password' });
         }
 
-        // Login successful
+        //Login successful
         return res.status(200).json({ success: true, message: 'Login successful' });
         
     })
@@ -47,6 +44,23 @@ app.post('/login', (req, res) => {
 
 app.get('/api/data', (req, res) => {
     db.all('SELECT * FROM QA_Set', [], (err, rows) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({ data: rows });
+    });
+});
+
+app.get('/api/flashcardData', (req, res) => {
+    const setId = req.query.setId;  
+    console.log("Received setId:", setId);  
+
+    if (!setId) {
+        return res.status(400).json({ error: 'setId is required' });
+    }
+
+    db.all('SELECT * FROM QandA WHERE setId = ?', [setId], (err, rows) => {
         if (err) {
             res.status(400).json({ error: err.message });
             return;
