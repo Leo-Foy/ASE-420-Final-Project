@@ -1,6 +1,6 @@
 const dataModel = require('../models/dataModel');
 
-// Handle fetching all data
+
 exports.getAllData = (req, res) => {
     dataModel.getAllData((err, rows) => {
         if (err) {
@@ -11,7 +11,6 @@ exports.getAllData = (req, res) => {
     });
 };
 
-// Handle adding new data
 exports.addData = (req, res) => {
     const newData = req.body;
     if (!newData.name) {

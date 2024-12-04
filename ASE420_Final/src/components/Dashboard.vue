@@ -46,7 +46,8 @@
             },
 
             toQuiz(set) {
-                this.$router.push({ name: 'Quiz', params: { setId } });
+                this.$router.push({ 
+                    name: 'Quiz', params: { setId: set.id, setTitle: set.Title,}});
             },
         }
     }
