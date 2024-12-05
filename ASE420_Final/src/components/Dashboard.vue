@@ -4,7 +4,7 @@
             <h1>Welcome to the Dashboard</h1>
         </div>
         <div class="center-container">
-            <button class="transparent-button">+ Create Set</button>
+            <button @click="toCreation()" class="transparent-button">+ Create Set</button>
         </div>
 
         <ul>
@@ -48,6 +48,9 @@
             toQuiz(set) {
                 this.$router.push({ 
                     name: 'Quiz', params: { setId: set.id, setTitle: set.Title,}});
+            },
+            toCreation() {
+                this.$router.push({ name: 'Set_Creation'});
             },
         }
     }

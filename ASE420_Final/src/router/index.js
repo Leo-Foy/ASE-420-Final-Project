@@ -5,6 +5,7 @@ import Dashboard from '@/components/Dashboard.vue';
 import Flashcards from '@/components/Flashcards.vue';
 import Quiz from '@/components/Quiz.vue';
 import Results from '@/components/Results.vue';
+import Set_Creation from '@/components/Set_Creation.vue';
 
 const routes = [
     { path: '/', name: 'Home', component: Home },    
@@ -13,6 +14,8 @@ const routes = [
     { path: '/flashcards/:setId', name: 'Flashcards', component: Flashcards }, 
     { path: '/quiz/:setId/:setTitle', name: 'Quiz', component: Quiz },
     { path: '/results', name: 'Results', component: Results },
+    { path: '/setcreation', name: 'Set_Creation', component: Set_Creation },
+
 ];
 
 const router = createRouter({
