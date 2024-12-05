@@ -1,0 +1,33 @@
+How to Use BrainBolt:
+
+Setup:
+
+    1. open two consoles
+    2. have the first be in the \ASE-420-Final-Project\ASE420_Final\server directory
+    3. have the second be in the \ASE-420-Final-Project\ASE420_Final directory
+
+    4. In the first console (the server), run the command: node server.js 
+    5. In the second console (client), run the command: npm run dev
+
+    6. The second console will display Vite information, find the Local url and navigate to it using your browser
+
+Using the App:
+
+    1. You will be presented with a dashboard, click login at the top left
+    2. You will be brought to a login page, enter the following credentials:
+        Email: user@mail.com
+        Password: 123
+    3. You will then be brought to the dashboard
+    4. Click the "Create Set" button and fill out the form, add as many questions and answers as you like using the "Add term" button, then click submit
+    5. You will be brought back to the dashboard where you can now see your set
+    6. Now you can select the flashcard button and the Quiz button
+        
+    Flashcards
+        1. Upon clicking the button you will be brought to the flashcard page
+        2. When you click on the card it will switch from the question to the answers
+        3. When you click the next button it will bring you to the next flashcard
+    
+    Quizzes
+        1. Upon clicking the button you will be brought to the quiz page
+        2. You will be presented with a series of questions, which you answer in the text box
+        3. Once you are done, hit the submit button, this will bring you to a results page that shows you how well you did
